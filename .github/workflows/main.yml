@@ -23,8 +23,8 @@ jobs:
       - name: Login to Docker Hub
         uses: docker/login-action@v1
         with:
-          username: ${{ simplewhaleci }}
-          password: ${{ a5e0177f-a42b-4802-9820-0001962c9c79 }}
+          username: ${{vietinbank01}}
+          password: ${{8b12a181-ba8d-40a0-98c2-8bda38a84737}}
 
       - name: Set up Docker Buildx
         id: buildx
@@ -37,7 +37,7 @@ jobs:
           context: ./
           file: ./Dockerfile
           push: true
-          tags: ${{ simplewhaleci }}/simplewhale:latest
+          tags: ${{simplewhaleci}}/simplewhale:latest
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
